@@ -1,0 +1,6 @@
+<h1>Upload#index</h1>
+
+<%= form_tag '/upload/procesa', :multipart => true do %>
+  <%= file_field_tag :archivo %>
+	<%= submit_tag %>
+<% end %>

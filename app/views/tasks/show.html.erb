@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Account:</b>
+  <%= @task.account_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @task.description %>
+</p>
+
+<p>
+  <b>Dtask:</b>
+  <%= @task.dtask %>
+</p>
+
+<p>
+  <b>Tplan:</b>
+  <%= @task.tplan %>
+</p>
+
+<p>
+  <b>Treal:</b>
+  <%= @task.treal %>
+</p>
+
+<p>
+  <b>Hsplan:</b>
+  <%= @task.hsplan %>
+</p>
+
+<p>
+  <b>Hsreal:</b>
+  <%= @task.hsreal %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  account_id: 1
+  description: MyText
+  dtask: 2011-03-17
+  tplan: 9.99
+  treal: 9.99
+  hsplan: 9.99
+  hsreal: 9.99
+
+two:
+  account_id: 1
+  description: MyText
+  dtask: 2011-03-17
+  tplan: 9.99
+  treal: 9.99
+  hsplan: 9.99
+  hsreal: 9.99
