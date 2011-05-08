@@ -17,9 +17,9 @@ table      { border: outset 1pt;
 
 #product-list .list-line-even { background: #d7f5ff ; }
 #product-list .list-line-odd  { background: #f2d8ff ; }
-#product-list .cuentas  { text-align: left ; background: #fff9bd ; font-size: 75% }
-#product-list .links  { text-align: center ; background: #ffffff ; font-size: 75%; border: outset 0pt; padding: horizontal 20pt; }
-#product-list .datos  { width: 35px ; font-size: 75%}
+#product-list .cuentas  { text-align: left ; background: #fff9bd ; font-size: 95% }
+#product-list .links  { text-align: center ; background: #ffffff ; font-size: 75%; border: outset 0pt; }
+#product-list .datos  { width: 57px ; height:40px ; font-size: 75% ; text-align: center ;}
 #banner { background: #fff ; }
 #banner .h1 {vertical-align: top;}
 th { border: outset 1pt;

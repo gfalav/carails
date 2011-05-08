@@ -20,33 +20,29 @@
         <th>Dic</th>
         <th>Tot</th>
         <th class="links"></th>
-        <th class="links"></th>
-        <th class="links"></th>
-        <th class="links"></th>
-        <th class="links"></th>
       </tr>
     
     <% @tasks.each do |task| %>
       <tr class="<%= cycle('list-line-odd', 'list-line-even') %>" >
         <td class="cuentas"><%= task[:account] %></td>
-        <td class="datos"><%= task[:ene] %></td>
-        <td class="datos"><%= task[:feb] %></td>
-        <td class="datos"><%= task[:mar] %></td>
-        <td class="datos"><%= task[:abr] %></td>
-        <td class="datos"><%= task[:may] %></td>
-        <td class="datos"><%= task[:jun] %></td>
-        <td class="datos"><%= task[:jul] %></td>
-        <td class="datos"><%= task[:ago] %></td>
-        <td class="datos"><%= task[:set] %></td>
-        <td class="datos"><%= task[:oct] %></td>
-        <td class="datos"><%= task[:nov] %></td>
-        <td class="datos"><%= task[:dic] %></td>
-        <td class="datos"><%= task[:tot] %></td>
-        <td class="links"><%= link_to '% Avance', :controller=>'tasks', :action=>'index', :id=>task[:account_id], :tdato=>'Tareas Avance' %></td>
-        <td class="links"><%= link_to 'T Plan', :controller=>'tasks', :action=>'index', :id=>task[:account_id], :tdato=>'Tareas Planeadas' %></td>
-        <td class="links"><%= link_to 'T Real', :controller=>'tasks', :action=>'index', :id=>task[:account_id], :tdato=>'Tareas Real' %></td>
-        <td class="links"><%= link_to 'Dias-Movil Plan', :controller=>'tasks', :action=>'index', :id=>task[:account_id], :tdato=>'Dias-Movil Planeados' %></td>
-        <td class="links"><%= link_to 'Dias-Movil Real', :controller=>'tasks', :action=>'index', :id=>task[:account_id], :tdato=>'Dias-Movil Reales' %></td>
+        <td class="datos"><%= raw(task[:ene]) %></td>
+        <td class="datos"><%= raw(task[:feb]) %></td>
+        <td class="datos"><%= raw(task[:mar])%></td>
+        <td class="datos"><%= raw(task[:abr]) %></td>
+        <td class="datos"><%= raw(task[:may]) %></td>
+        <td class="datos"><%= raw(task[:jun]) %></td>
+        <td class="datos"><%= raw(task[:jul]) %></td>
+        <td class="datos"><%= raw(task[:ago]) %></td>
+        <td class="datos"><%= raw(task[:set]) %></td>
+        <td class="datos"><%= raw(task[:oct]) %></td>
+        <td class="datos"><%= raw(task[:nov]) %></td>
+        <td class="datos"><%= raw(task[:dic]) %></td>
+        <td class="datos"><%= raw(task[:tot]) %></td>
+		<% if (task[:account]=='>---Edesal' || task[:account]=='>---Edelar' || task[:account]=='>---Edesa')%>
+        	<td class="links"><%= link_to '+ Detalle', :controller=>'tasks', :action=>'index', :id=>task[:account_id] %></td>
+		<% else %>
+        	<td class="links"><%= link_to 'c/Distritos', :controller=>'tasks', :action=>'index', :id=>task[:account_id] %></td>
+		<% end %>
       </tr>
     <% end %>
     </table>

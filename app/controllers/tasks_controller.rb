@@ -13,7 +13,7 @@ class TasksController < ApplicationController
       params[:id] = 1
     end
 
-    @tasks = gettasksbymonth(Account.find(1), Account.find(params[:id].to_i),Array.new,'>',params[:fini],params[:ffin],params[:tdato])
+    @tasks = gettasksbymes(Account.find(1), Account.find(params[:id].to_i),Array.new,'>',params[:fini],params[:ffin],params[:tdato])
     @tdato = params[:tdato]
     
     respond_to do |format|
@@ -22,7 +22,37 @@ class TasksController < ApplicationController
     end
   end
 
-  #devuelve las tareas agrupadas en la jerarquía de cuentas y meses
+  def gettasksbymes(account,accountorig,arrtasks,tabspc,fini,ffin,tdato)
+    tabspc = tabspc + '---'
+
+    account.children.each {|a|
+      a.name = tabspc + a.name
+
+        if (a.has_children?)
+          if (a.children[0].has_children?)
+            arrtasks << Task.new.tempty(a)
+          else
+            arrtasks << Task.new.tadvancebymonth(a,fini,ffin)
+          end
+        else
+          if (false)
+            arrtasks << Task.new.tadvancebymonth(a,fini,ffin)
+          end
+        end
+        arrtmp = Array.new
+        arrtmp << a.id
+        if (accountorig.id > 1 && (((accountorig.descendant_ids + accountorig.ancestor_ids) << accountorig.id) & arrtmp).length > 0 )
+          gettasksbymes(a,accountorig,arrtasks,tabspc,fini,ffin,tdato)
+        end
+    }
+    
+    return arrtasks
+  end
+
+
+
+
+  #devuelve las tareas agrupadas en la jerarquï¿½a de cuentas y meses
   def gettasksbymonth(account, accountorig, arrtasks,tabspc,fini,ffin,tdato)
     tabspc = tabspc + '---'
 
@@ -60,13 +90,14 @@ class TasksController < ApplicationController
               arrtasks << Task.new.tempty(a)
             else
               arrtasks << Task.new.tadvancebymonth(a,fini,ffin)
+              
             end
           else
             arrtasks << Task.new.tadvancebymonth(a,fini,ffin)
           end
       end
 
-      #acá va la parte recursiva
+      #acï¿½ va la parte recursiva
       arrtmp = Array.new
       arrtmp << a.id
       if ((accountorig.ancestor_ids << accountorig.id) & arrtmp  ).length > 0

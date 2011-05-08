@@ -100,67 +100,69 @@ class Task < ActiveRecord::Base
 	  h[:account] = account.name
 	  h[:account_id] = account.id
 	  if (n['1']!=0 && m['1']!=0)
-		  h[:ene] = (m['1']/n['1']*100).round(0).to_s+'%'
+		  h[:ene] = m['1'].to_i.to_s + '/' + n['1'].to_i.to_s + "<br/>" + (m['1']/n['1']*100).round(0).to_s+'%'
 	  else
-	  	  h[:ene] = 0.to_s+'%'
+   	  h[:ene] = m['1'].to_i.to_s + '/' + n['1'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['2']!=0 && m['2']!=0)
-	  	h[:feb] = (m['2']/n['2']*100).round(0).to_s+'%'
+      h[:feb] = m['2'].to_i.to_s + '/' + n['2'].to_i.to_s + "<br/>" + (m['2']/n['2']*100).round(0).to_s+'%'
 	  else
-		h[:feb] = 0.to_s+'%'
+      h[:feb] = m['2'].to_i.to_s + '/' + n['2'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['3']!=0 && m['3']!=0)
-	  	h[:mar] = (m['3']/n['3']*100).round(0).to_s+'%'
+      h[:mar] = m['3'].to_i.to_s + '/' + n['3'].to_i.to_s + "<br/>" + (m['3']/n['3']*100).round(0).to_s+'%'
 	  else
-		h[:mar] = 0.to_s+'%'
+		  h[:mar] = m['3'].to_i.to_s + '/' + n['3'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['4']!=0 && m['4']!=0)
-	  	h[:abr] = (m['4']/n['4']*100).round(0).to_s+'%'
+      h[:abr] = m['4'].to_i.to_s + '/' + n['4'].to_i.to_s + "<br/>" + (m['4']/n['4']*100).round(0).to_s+'%'
 	  else
-		h[:abr] = 0.to_s+'%'
+		  h[:abr] = m['4'].to_i.to_s + '/' + n['4'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['5']!=0 && m['5']!=0)
-	  	h[:may] = (m['5']/n['5']*100).round(0).to_s+'%'
+      h[:may] = m['5'].to_i.to_s + '/' + n['5'].to_i.to_s + "<br/>" + (m['5']/n['5']*100).round(0).to_s+'%'
 	  else
-		h[:may] = 0.to_s+'%'
+		  h[:may] = m['5'].to_i.to_s + '/' + n['5'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['6']!=0 && m['6']!=0)
-	  	h[:jun] = (m['6']/n['6']*100).round(0).to_s+'%'
+      h[:jun] = m['6'].to_i.to_s + '/' + n['6'].to_i.to_s + "<br/>" + (m['6']/n['6']*100).round(0).to_s+'%'
 	  else
-		h[:jun] = 0.to_s+'%'
+  		h[:jun] = m['6'].to_i.to_s + '/' + n['6'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['7']!=0 && m['7']!=0)
-	  	h[:jul] = (m['7']/n['7']*100).round(0).to_s+'%'
+      h[:jul] = m['7'].to_i.to_s + '/' + n['7'].to_i.to_s + "<br/>" + (m['7']/n['7']*100).round(0).to_s+'%'
 	  else
-		h[:jul] = 0.to_s+'%'
+		  h[:jul] = m['7'].to_i.to_s + '/' + n['7'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['8']!=0 && m['8']!=0)
-	  	h[:ago] = (m['8']/n['8']*100).round(0).to_s+'%'
+      h[:ago] = m['8'].to_i.to_s + '/' + n['8'].to_i.to_s + "<br/>" + (m['8']/n['8']*100).round(0).to_s+'%'
 	  else
-		h[:ago] = 0.to_s+'%'
+		  h[:ago] = m['8'].to_i.to_s + '/' + n['8'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['9']!=0 && m['9']!=0)
-	  	h[:set] = (m['9']/n['9']*100).round(0).to_s+'%'
+      h[:set] = m['9'].to_i.to_s + '/' + n['9'].to_i.to_s + "<br/>" + (m['9']/n['9']*100).round(0).to_s+'%'
 	  else
-		h[:set] = 0.to_s+'%'
+  		h[:set] = m['9'].to_i.to_s + '/' + n['9'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['10']!=0 && m['10']!=0)
-	  	h[:oct] = (m['10']/n['10']*100).round(0).to_s+'%'
+      h[:oct] = m['10'].to_i.to_s + '/' + n['10'].to_i.to_s + "<br/>" + (m['10']/n['10']*100).round(0).to_s+'%'
 	  else
-		h[:oct] = 0.to_s+'%'
+  		h[:oct] = m['10'].to_i.to_s + '/' + n['10'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['11']!=0 && m['11']!=0)
-	  	h[:nov] = (m['11']/n['11']*100).round(0).to_s+'%'
+      h[:nov] = m['11'].to_i.to_s + '/' + n['11'].to_i.to_s + "<br/>" + (m['11']/n['11']*100).round(0).to_s+'%'
 	  else
-		h[:nov] = 0.to_s+'%'
+  		h[:nov] = m['11'].to_i.to_s + '/' + n['11'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['12']!=0 && m['12']!=0)
-	  	h[:dic] = (m['12']/n['12']*100).round(0).to_s+'%'
+      h[:dic] = m['12'].to_i.to_s + '/' + n['12'].to_i.to_s + "<br/>" + (m['12']/n['12']*100).round(0).to_s+'%'
 	  else
-		h[:dic] = 0.to_s+'%'
+  		h[:dic] = m['12'].to_i.to_s + '/' + n['12'].to_i.to_s + "<br/>" + 0.to_s+'%'
 	  end
 	  if (n['1']+n['2']+n['3']+n['4']+n['5']+n['6']+n['7']+n['8']+n['9']+n['10']+n['11']+n['12'])!=0
-	  	h[:tot] = ((m['1']+m['2']+m['3']+m['4']+m['5']+m['6']+m['7']+m['8']+m['9']+m['10']+m['11']+m['12'])/(n['1']+n['2']+n['3']+n['4']+n['5']+n['6']+n['7']+n['8']+n['9']+n['10']+n['11']+n['12'])*100).round(0).to_s+'%'
+	    h[:tot] = (m['1']+m['2']+m['3']+m['4']+m['5']+m['6']+m['7']+m['8']+m['9']+m['10']+m['11']+m['12']).to_i.to_s + '/' 
+	    h[:tot] = h[:tot] + (n['1']+n['2']+n['3']+n['4']+n['5']+n['6']+n['7']+n['8']+n['9']+n['10']+n['11']+n['12']).to_i.to_s + "<br/>"
+	  	h[:tot] = h[:tot] + ((m['1']+m['2']+m['3']+m['4']+m['5']+m['6']+m['7']+m['8']+m['9']+m['10']+m['11']+m['12'])/(n['1']+n['2']+n['3']+n['4']+n['5']+n['6']+n['7']+n['8']+n['9']+n['10']+n['11']+n['12'])*100).round(0).to_s+'%'
 	  else
 		h[:tot] = 0.to_s+'%'
 	  end
