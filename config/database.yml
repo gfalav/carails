@@ -47,5 +47,5 @@ production:
   encoding: unicode
   database: carails_production
   pool: 5
-  username: carails
-  password:
+  username: postgres
+  password: pupunino
