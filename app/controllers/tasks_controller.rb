@@ -1,4 +1,31 @@
 class TasksController < ApplicationController
+  def gettaskbydistrito
+
+    params[:fini] = Date.new(2011,1,1)
+    params[:ffin] = params[:fini].next_year-1
+
+    if (params[:tdato] == nil)
+      params[:tdato] = 'Tareas Avance'
+    end
+    if (params[:id] == nil)
+      params[:id] = 1
+    end
+    
+    @tasks = Array.new
+    
+    Account.find(params[:id].to_i).children.each {|a|
+      @tasks << Task.new.tadvancebymonth(a,params[:fini],params[:ffin])
+    }
+    
+    @tdato = params[:tdato]
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @tasks }
+    end
+    
+  end
+
   # GET /tasks
   # GET /tasks.xml
   def index

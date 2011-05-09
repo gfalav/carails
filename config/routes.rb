@@ -6,7 +6,11 @@ Carails::Application.routes.draw do
     end
   end
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      get "gettaskbydistrito"
+    end
+  end
 
   resources :accounts
 

@@ -38,15 +38,10 @@
         <td class="datos"><%= raw(task[:nov]) %></td>
         <td class="datos"><%= raw(task[:dic]) %></td>
         <td class="datos"><%= raw(task[:tot]) %></td>
-		<% if (task[:account]=='>---Edesal' || task[:account]=='>---Edelar' || task[:account]=='>---Edesa')%>
-        	<td class="links"><%= link_to '+ Detalle', :controller=>'tasks', :action=>'index', :id=>task[:account_id] %></td>
-		<% else %>
-        	<td class="links"><%= link_to 'c/Distritos', :controller=>'tasks', :action=>'gettaskbydistrito', :id=>task[:account_id] %></td>
-		<% end %>
       </tr>
     <% end %>
     </table>
 </div>
 <br />
 
-<!--- <%= link_to 'New Task', new_task_path %> --->
+<%= link_to 'Volver al Informe', "../tasks" %>
